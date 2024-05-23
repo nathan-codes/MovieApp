@@ -3,7 +3,7 @@ import { moblieNavigation } from "../constants/navigation";
 
 const MobileNavigation = () => {
   return (
-    <div className="lg:hidden fixed bottom-0 bg-neutral-600 bg-opacity-40 h-14 w-full ">
+    <div className="lg:hidden fixed bottom-0 bg-neutral-600 bg-opacity-80 h-14 w-full z-50 ">
       <div className="flex items-cemter justify-between h-full text-neutral-400 ">
         {moblieNavigation.map((navItem) => {
           return (
