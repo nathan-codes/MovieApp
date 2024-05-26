@@ -28,4 +28,4 @@ const useFetchData = (endpoint) => {
 
 
 
-export default useFetchData
+export default useFetchData 
