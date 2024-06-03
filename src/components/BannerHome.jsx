@@ -72,7 +72,7 @@ const BannerHome = () => {
                 <button
                   onClick={handlePrevious}
                   className="bg-white p-1 text-2xl rounded-full text-black z-10"
-                >
+                > 
                   <FaAngleLeft size="1.3rem" />
                 </button>
                 <button
