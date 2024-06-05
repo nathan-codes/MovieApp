@@ -1,12 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Card from "../components/Card";
 
 const ExplorePage = () => {
   const exploreParams = useParams();
-  const [pageNo, setPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(0);
+  const [pageNo, setPageNo] = useState(1);
   const [exploreData, setExploreData] = useState([]);
 
   const fetchExploreData = async () => {
@@ -16,10 +14,9 @@ const ExplorePage = () => {
           page: pageNo,
         },
       });
-      setTotalPages(res.data.total_pages);
-
+      console.log("Explore Data", exploreData);
       setExploreData((prevData) => {
-        return [...prevData, res.data.results];
+        return [...prevData, ...res.data.results];
       });
     } catch (error) {
       console.log(error);
@@ -30,27 +27,18 @@ const ExplorePage = () => {
     fetchExploreData();
   }, [pageNo]);
 
-  console.log("Expore Params", exploreParams);
-  console.log("response", exploreData);
-
-  const handlescroll = () => {
-    if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-      setPage((prev) => prev + 1);
-    }
+  const handleScroll = () => {
+    setPageNo((prevItem) => (prevItem += 1));
   };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handlescroll);
-  }, []);
 
   return (
     <main className="pt-20">
-      <h1 className="capitalize"> Popular {exploreParams.explore} Shows </h1>
+      <h1 className="capitalize"> Popular {exploreParams.explore} Shows</h1>
 
       <section>
-        {exploreData.map((item, index) => {
-          return <Card data={exploreData} key={index} />;
-        })}
+        <button > {exploreData.map((item,index) => {
+          return <li key={index}>df</li>
+        })}  </button>
       </section>
     </main>
   );
