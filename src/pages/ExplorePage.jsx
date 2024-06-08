@@ -21,7 +21,7 @@ const ExplorePage = () => {
       });
     } catch (error) {
       console.log(error);
-    }ujm---kk
+    }
   };
 
   useEffect(() => {
