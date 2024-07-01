@@ -13,6 +13,8 @@ const Home = () => {
     return state.movieoData.bannerData;
   });
 
+
+
   return (
     <div className="">
       <BannerHome />
@@ -22,7 +24,7 @@ const Home = () => {
         trending={true}
       />
 
-      <HorizontalScrollCardGroup title={"Now Playing"} data={nowShowingData} />
+      <HorizontalScrollCardGroup title={"Now Playing"} data={nowShowingData}  />
       <HorizontalScrollCardGroup title={"Top Rated Movies"} data={topRated} />
       <HorizontalScrollCardGroup title={"Popular Tv Show"} data={popularTv} />
       <HorizontalScrollCardGroup title={"On The Air"} data={onAir} />

@@ -26,10 +26,11 @@ const ExplorePage = () => {
 
   useEffect(() => {
     fetchExploreData();
-  }, [pageNo]);
+  
+  }, [pageNo, exploreParams.explore]);
 
   const handleScroll = () => {
-    if (window.innerHeight + window.screenY >= document.body.offsetHeight) {
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
       setPageNo((prevItem) => (prevItem += 1));
     }
   };
@@ -38,13 +39,15 @@ const ExplorePage = () => {
     window.addEventListener("scroll", handleScroll);
   });
 
+  
+
   return (
     <main className="pt-20">
       <h1 className="capitalize"> Popular {exploreParams.explore} Shows</h1>
 
       <section className=" grid grid-cols-[repeat(auto-fit,230px)] gap-6">
         {exploreData.map((item, index) => {
-          return <Card key={index} data={item} />;
+          return <Card key={index} data={item} media_type={exploreParams.explore}/>;
         })}
       </section>
     </main>
