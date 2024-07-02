@@ -22,12 +22,29 @@ const Home = () => {
         title={"Trending Now"}
         data={data}
         trending={true}
+        media_type="movie"
       />
 
-      <HorizontalScrollCardGroup title={"Now Playing"} data={nowShowingData}  />
-      <HorizontalScrollCardGroup title={"Top Rated Movies"} data={topRated} />
-      <HorizontalScrollCardGroup title={"Popular Tv Show"} data={popularTv} />
-      <HorizontalScrollCardGroup title={"On The Air"} data={onAir} />
+      <HorizontalScrollCardGroup
+        title={"Now Playing"}
+        data={nowShowingData}
+        media_type="movie"
+      />
+      <HorizontalScrollCardGroup
+        title={"Top Rated Movies"}
+        data={topRated}
+        media_type="movie"
+      />
+      <HorizontalScrollCardGroup
+        title={"Popular Tv Show"}
+        data={popularTv}
+        media_type="movie"
+      />
+      <HorizontalScrollCardGroup
+        title={"On The Air"}
+        data={onAir}
+        media_type="movie"
+      />
     </div>
   );
 };

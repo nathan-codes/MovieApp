@@ -3,7 +3,7 @@ import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import Card from "./Card";
 import { useRef } from "react";
 
-const HorizontalScrollCardGroup = ({ data = [], title, trending }) => {
+const HorizontalScrollCardGroup = ({ data = [], title, trending, media_type }) => {
   const containerRef = useRef();
 
   // Function to scroll left
@@ -29,7 +29,7 @@ const HorizontalScrollCardGroup = ({ data = [], title, trending }) => {
           className="flex gap-6 lg:overflow-x-hidden overflow-y-hidden relative z-10"
         >
           {data.map((data, index) => (
-            <Card key={index} index={index + 1} data={data} trending={trending} />
+            <Card key={index} index={index + 1} data={data} trending={trending} media_type={media_type} />
           ))}
         </div>
         <div className="hidden lg:flex absolute top-0 justify-between  w-full h-full items-center">

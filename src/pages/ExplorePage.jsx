@@ -27,7 +27,13 @@ const ExplorePage = () => {
   useEffect(() => {
     fetchExploreData();
   
-  }, [pageNo, exploreParams.explore]);
+  }, [pageNo]);
+
+  useEffect(() => {
+    setPageNo(1)
+    setExploreData([])
+    fetchExploreData()
+  }, [exploreParams.explore])
 
   const handleScroll = () => {
     if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
