@@ -51,9 +51,11 @@ const ExplorePage = () => {
     <main className="pt-20">
       <h1 className="capitalize"> Popular {exploreParams.explore} Shows</h1>
 
-      <section className=" grid grid-cols-[repeat(auto-fit,230px)] gap-6">
+      <section className=" grid grid-cols-[repeat(auto-fit,230px)] gap-6 justify-center md:justify-start">
         {exploreData.map((item, index) => {
-          return <Card key={index} data={item} media_type={exploreParams.explore}/>;
+          return (
+            <Card key={index} data={item} media_type={exploreParams.explore} />
+          );
         })}
       </section>
     </main>

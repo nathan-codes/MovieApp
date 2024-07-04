@@ -39,20 +39,15 @@ const SearchPage = () => {
         <h2 className="capitalize text-lg lg:text-lg font-semibold my-3">
           Search Results
         </h2>
-
-        <section className=" grid grid-cols-[repeat(auto-fit,230px)] gap-6">
-          {searchData.map((item, index) => {
-            return (
-              <Card
-                key={index}
-                data={item}
-           
-              />
-            );
-          })}
-        </section>
+   
+          <section className=" grid grid-cols-[repeat(auto-fit,230px)] gap-6 justify-center md:justify-start">
+            {searchData.map((item, index) => {
+              return <Card key={index} data={item} />;
+            })}
+          </section>
+        </div>
       </div>
-    </div>
+
   );
 };
 
